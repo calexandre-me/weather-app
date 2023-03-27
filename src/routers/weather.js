@@ -32,6 +32,4 @@ weatherRouter.get('/secure-1234-weatherUtil-info-api-get-info', (req, res) => {
     })
 });
 
-module.exports = {
-    weatherRouter
-}
+module.exports = weatherRouter;

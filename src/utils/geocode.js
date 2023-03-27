@@ -1,6 +1,6 @@
 const request = require('request');
 
-const geocode = function (address, callback){
+const geoUtil = function (address, callback){
   const urlGeoAPI = `https://api.geoapify.com/v1/geocode/search?text=${address}&lang=en&limit=1&type=city&format=json&apiKey=ecc7d1ab41b44aab8e405708c2e75ba8`;
 
 request({url: urlGeoAPI, json:true}, (error, response)=>{
@@ -20,4 +20,4 @@ request({url: urlGeoAPI, json:true}, (error, response)=>{
   
 }
 
-module.exports = { geocode: geocode }
+module.exports = geoUtil;

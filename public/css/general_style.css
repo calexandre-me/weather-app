@@ -1,0 +1,154 @@
+@font-face { font-family: rubik; src: url("../font/Rubik-Light.ttf"); }
+@font-face { font-family: snowball; src: url("../font/CfSnowballRegular-8xp2.ttf"); }
+
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+
+a{color: blue}
+
+html, body, header{
+    width: -moz-available;          
+    width: -webkit-fill-available; 
+    width: fill-available;
+    height: -moz-available;          
+    height: -webkit-fill-available; 
+    height: fill-available;
+}
+
+body{
+    background-image: url("../images/weather-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: rubik;
+}
+
+#global-container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(79, 169, 248, 0.65);
+    padding-top: 10px;
+    position: relative; 
+}
+
+/*Shared selection*/
+#header, #footer{
+    width: 98%;
+    margin: 0 auto 0 auto;
+}
+
+/*Style for HEADER and NAVIGATION MENU*/
+#header{
+    height: calc(100vh * 0.15);
+    background-color: #ffffff;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 1024px) {
+    #header{
+        display: block !important;
+    }
+}
+
+.open-mobile-bars button, .close-mobile-bars button{border: none; outline: none; background-color: transparent; color:#fff; font-size: 32px;}
+.open-mobile-bars, .close-mobile-bars { display: none;}
+.open-mobile-bars { margin-bottom: 20px; text-align: center; }
+.close-mobile-bars { z-index: 10; position: absolute; right: 20px; top: 5px; }
+
+#header nav ul{ display: flex;
+    position: relative;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#header nav ul li#logo-wp{
+    user-select: none; 
+}
+
+#header nav ul li{
+ border-bottom: 3px solid transparent;
+}
+
+#header nav ul li:hover:not(#logo-wp){
+    border-bottom: 3px solid rgb(30, 30, 96);
+    transition: border-bottom 0.5s;
+}
+
+#header nav ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(90, 89, 89);
+    text-transform: uppercase;
+    text-align: center;
+}
+/*==========================*/
+
+/*Style for dialog box*/
+.container-feedback{
+   width: 102px;
+   height: 42px;
+   position: absolute;
+   bottom: 0px;
+   right: 50px;
+   text-align: center;
+}
+.container-feedback i{ font-size: 32px; color: #0a35df}
+
+#my-dialog{ display: none; position: absolute; right: 0px; bottom:43px;  width: 300px; height:215px; background-color: blueviolet;}
+#my-dialog form {width: 90%; margin: auto;}
+#my-dialog form *{width: 100%; margin: 10px auto; outline: none; border: none;}
+#my-dialog form input[type='email']{ height: 30px; padding-left: 5px;} 
+#my-dialog form textarea{ height: 80px; resize: none} 
+#my-dialog form input[type='submit']{background-color: rgb(43, 226, 128); height: 30px;}
+
+.container-feedback:hover #my-dialog{
+    transition: 0.4s;
+    display: block;
+}
+
+/*===========================*/
+
+/*Style for FOOTER*/
+div#footer{
+    height: calc(100vh * 0.05);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: baseline;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+div#footer #social-media{
+    display: flex;
+    padding-top: 5px;
+    width: 60%;
+    justify-content: space-around;
+}
+
+/*Design HEADER and FOOTER for mobile and tablet*/
+@media (max-width: 1024px) {
+    /* #header{ display: none !important;} */
+    #header{
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;       
+        height: -webkit-fill-available; 
+        max-height: fill-available;
+        background-color: #435ab8;
+        z-index: 1;
+        display: none;
+    }
+    .open-mobile-bars, .close-mobile-bars {display: block;}
+    #header nav ul{ flex-direction: column;
+    height: 100vh;}
+
+    #header nav ul li a{color: #fff;}
+        
+}
+
+@media (min-height: 615px) {
+    header{ position: sticky; top: 0}
+}

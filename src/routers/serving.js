@@ -24,6 +24,4 @@ pagesServingRouter.post('/comment', (req, res)=>{
     return res.send({msg: 'Hey'})
 })
 
-module.exports = {
-    pagesServingRouter
-}
+module.exports = pagesServingRouter
