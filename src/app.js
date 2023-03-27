@@ -17,13 +17,12 @@ app.set('view engine', 'hbs');
 
 hbs.registerPartials(pathToPartials);
 
-app.use(weatherRouter)
-app.use(pagesServingRouter)
+
 app.use(express.static(publicRessourcesPath));
 app.use(express.urlencoded( {extended: true }))
 app.use(express.json())
-
-
+app.use(weatherRouter)
+app.use(pagesServingRouter)
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}...`);

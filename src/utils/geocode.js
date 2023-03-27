@@ -20,4 +20,4 @@ request({url: urlGeoAPI, json:true}, (error, response)=>{
   
 }
 
-module.exports = geoUtil;
+module.exports = {geoUtil}

@@ -36,4 +36,4 @@ const weatherUtil = (latitude, longitude, callback) => {
   });
 }
 
-module.exports = weatherUtil;
+module.exports = {weatherUtil};
