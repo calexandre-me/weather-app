@@ -4,7 +4,7 @@ const geoUtil = require('../utils/geocode');
 
 const weatherRouter = express.Router();
 
-weatherRouter.get('/secure-1234-weatherUtil-info-api-get-info', (req, res) => {
+weatherRouter.get('/secure-1234-weather-info-api-get-info', (req, res) => {
     const userQuery = req.query;
     console.log(userQuery);
     
@@ -20,9 +20,10 @@ weatherRouter.get('/secure-1234-weatherUtil-info-api-get-info', (req, res) => {
             })
         }
     }
-    geoUtil.geocode(userQuery.address, (error, {latitude, longitude} = {})=>{
+    
+    geoUtil.geoUtil(userQuery.address, (error, {latitude, longitude} = {})=>{
         if(!error){
-          return weatherUtil.forecast(latitude, longitude, (weatherUtilData)=>{
+          return weatherUtil.weatherUtil(latitude, longitude, (weatherUtilData)=>{
             res.send(JSON.stringify(weatherUtilData));
           })
         }

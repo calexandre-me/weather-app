@@ -3,7 +3,6 @@ console.log('Hi this is forecast.');
 const searchWeather = document.querySelector("form");
 const [table] = document.getElementsByClassName("table-resume");   
 
-
 table.addEventListener('click', (e)=>{
     if(e.target.classList.contains('table-resume')){
         table.style.display = 'none';
@@ -15,11 +14,12 @@ searchWeather.addEventListener("submit", (event) => {
 
     const userTarget = document.getElementById("target-location").value;   
     fetch(`/secure-1234-weather-info-api-get-info?address=${userTarget}`).then(response=>{
+        console.log(response);
         response.json().then(data=>{
-console.log(data);
-
+        console.log(data);
         const [serverMessageBox] = document.getElementsByClassName('server-message');
-        const serverMessage = document.getElementById('message');  
+        const serverMessage = document.getElementById('message'); 
+
         const txtResume = document.getElementById('txt-resume');      
         const [tableWeather] = document.getElementsByClassName('table-resume');
             if(!data.error){
@@ -42,23 +42,19 @@ console.log(data);
                 });
 
                 txtResume.textContent = `${userTarget} is ${results[0]}`; 
-                
                 table.style.display = 'block';
             }
             else{
+                
                 if(!tableWeather.classList.contains('hide')){
                     tableWeather.classList.add('hide')
                 }
-                
                 if(serverMessageBox.classList.contains('hide')){
                     serverMessageBox.classList.remove('hide');
                 }
                 serverMessage.style.fontWeight = 'bold';
                 serverMessage.textContent = data.error;
             }
-
         })
     })
-
-    
 });
