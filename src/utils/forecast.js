@@ -6,12 +6,16 @@ const weatherUtil = (latitude, longitude, callback) => {
 
   request({ url: urlWeatherAPI, json: true }, (error, response) => {
     const weatherInformation = {
-      description: undefined,
+      actualTime: undefined,
+      icon: undefined,
       temperature: undefined,
       feelslike: undefined,
       windspeed: undefined,
       visibility: undefined,
-      humidity: undefined     
+      humidity: undefined,
+      pressure: undefined,
+      precipitation: undefined,
+      description: undefined
     }
     
     if (error) {
@@ -22,15 +26,23 @@ const weatherUtil = (latitude, longitude, callback) => {
     }
     else {
       const currentDataInformation = response.body.current;
+      const additionalInfo = response.body.location;
+      const getTime_ = additionalInfo.localtime.split(' ')[1];
+
       console.log(currentDataInformation);
+      const [weatherImage] = currentDataInformation.weather_icons;
       const [weatherDescribe] = currentDataInformation.weather_descriptions;
-      
-      weatherInformation.description = weatherDescribe;
+       
+      weatherInformation.actualTime = Number(getTime_.split(':')[0]) >= 12 ? getTime_+' PM' : getTime_+' AM';
+      weatherInformation.icon = weatherImage;
       weatherInformation.temperature = currentDataInformation.temperature;
       weatherInformation.feelslike = currentDataInformation.feelslike;
       weatherInformation.windspeed = currentDataInformation.wind_speed;
       weatherInformation.visibility = currentDataInformation.visibility;
-      weatherInformation.humidity = currentDataInformation.humidity;      
+      weatherInformation.humidity = currentDataInformation.humidity; 
+      weatherInformation.pressure = currentDataInformation.pressure;
+      weatherInformation.precipitation = currentDataInformation.precip;  
+      weatherInformation.description = weatherDescribe;
     }
     callback(weatherInformation);
   });

@@ -8,8 +8,8 @@
 </head>
 <body>
     <div id="global-container">
-    {{>header}}
-    <div id="content">
+     {{>header}}
+     <div id="content">
         <div id="title">
             <h3>Enter a (Postal code/City/Country/) of a location in the box bellow to get a full resume of the forecasts.</h3>
         </div>
@@ -23,32 +23,31 @@
                 <caption>
                     <h3>Weather resume</h3>
                 </caption>
-                <thead>
-                    <tr>
-                        <th>Target</th>
-                        <th>Value</th>
-                    </tr>
-                </thead>
+               
                 <tbody>
-                    <tr><td>Description</td><td><span class="result">...</span></td></tr>
-                    <tr><td>Temperature</td><td><span class="result">...</span> degree(s)</td></tr>
-                    <tr><td>Feelslike</td><td><span class="result">...</span> degree(s)</td></tr>
-                    <tr><td>Windspeed</td><td><span class="result">...</span> (km/h)</td></tr>
-                    <tr><td>Visibility</td><td><span class="result">...</span> m</td></tr>
-                    <tr><td>Humidity</td><td><span class="result">...</span> g.m <sup>-3</sup></td></tr>
+                    {{!-- <tr><td>Description</td><td><span class="result">...</span></td></tr> --}}
+                    <tr title="Current time"><td>Time</td><td><span class="result">...</span></td></tr>
+                    <tr title="Weather description"><td>Description</td><td><img class="result" width="24" height="24"></td></tr>
+                    <tr title="Temperature"><td><i class="fa-solid fa-temperature-high"></i></td><td><span class="result">...</span> degree(s)</td></tr>
+                    <tr title="Feelslike"><td><i class="fa-solid fa-temperature-low"></i><i class="fa-solid fa-wave-square"></i></td><td><span class="result">...</span> degree(s)</td></tr>
+                    <tr title="Windspeed"><td><i class="fa-solid fa-wind"></i></td><td><span class="result">...</span> (km/h)</td></tr>
+                    <tr title="Visibility"><td><i class="fa-solid fa-eye"></i></td><td><span class="result">...</span> m</td></tr>
+                    <tr title="Humidity"><td><i class="fa-solid fa-rainbow"></i></td><td><span class="result">...</span> m</td></tr>
+                    <tr title="Pressure"><td><i class="fa-solid fa-gauge"></i></td><td><span class="result">...</span> m</td></tr>
+                    <tr title="Precipitation"><td><i class="fa-solid fa-cloud-rain"></i></td><td><span class="result">...</span> g.m <sup>-3</sup></td></tr>
                     
                 </tbody>
                 <tfoot>
-                    <td colspan="2">The forecast for <span id="txt-resume"></span>. Thanks for consulting us!</td>
+                    <td colspan="2">The forecast for <span id="txt-resume" class="result"></span>. Thanks for consulting us!</td>
                 </tfoot>
             </table>
         </div>
         <div class="server-message hide">
             <p id="message">The current location is incorrect</p>
         </div>
-    </div>
-    {{>commentbox}}
-    {{>footer}}
+     </div>
+        {{>commentbox}}
+        {{>footer}}
     </div>
 </body>
 </html>

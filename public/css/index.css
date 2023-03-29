@@ -74,12 +74,10 @@ div#content #content-right-side img{
 
 @media (max-width: 1024px) {
    
-    div#content{ padding-top: 5px}
-    div#content{ display: flex; flex-direction: column;  align-items: center;gap: 20px;}
-    div#content-boxes{ margin-bottom: 10px;}
-    div#content-boxes .box h3{font-size: 14px; border-right: 1px solid black;}
-    #content-header p{font-size: 16px;}
-    div#content #content-right-side img{ width: 42px; height: 42px;}
+    div#content{ padding-top: 35px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 25px;}
+    #content-header{ width: 100% !important;  height: fit-content !important;}
+    #content-boxes{ display: none !important;}
+    div#content #content-right-side img{ width: 54px; height: 54px;}
 }
 
 @media (max-height: 615px) or (max-width: 1024px)  {

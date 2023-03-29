@@ -3,8 +3,8 @@ console.log('Hi this is forecast.');
 const searchWeather = document.querySelector("form");
 const [table] = document.getElementsByClassName("table-resume");   
 
-table.addEventListener('click', (e)=>{
-    if(e.target.classList.contains('table-resume')){
+document.addEventListener('click', (e)=>{
+    if(!e.target.classList.contains('table-resume')){
         table.style.display = 'none';
     }
 })
@@ -35,13 +35,16 @@ searchWeather.addEventListener("submit", (event) => {
                 console.log(results);
                 
                 const resultFields = document.getElementsByClassName("result");
-    
+                console.log(resultFields);
+                
                 results.forEach((value, index) => {
-                    resultFields[index].style.fontWeight = 'bold';
+                    if(index == 1) { console.log(value);
+                     resultFields[index].src = value }
                     resultFields[index].textContent = value;
                 });
-
-                txtResume.textContent = `${userTarget} is ${results[0]}`; 
+                console.log('Hey!!! ' + results.length);
+                console.log('Hey!!! ' + results);
+                txtResume.textContent = `${userTarget} is ${results[results.length-1]}`; 
                 table.style.display = 'block';
             }
             else{

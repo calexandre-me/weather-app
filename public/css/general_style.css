@@ -50,7 +50,7 @@ body{
     }
 }
 
-.open-mobile-bars button, .close-mobile-bars button{border: none; outline: none; background-color: transparent; color:#fff; font-size: 32px;}
+.open-mobile-bars button, .close-mobile-bars button{border: none; outline: none; background-color: transparent; color:rgb(84, 84, 84); font-size: 32px;}
 .open-mobile-bars, .close-mobile-bars { display: none;}
 .open-mobile-bars { margin-bottom: 20px; text-align: center; }
 .close-mobile-bars { z-index: 10; position: absolute; right: 20px; top: 5px; }
@@ -89,13 +89,13 @@ body{
    width: 102px;
    height: 42px;
    position: absolute;
-   bottom: 15%;
-   right: 5%;
+   bottom: 1%;
+   right: 0;
    text-align: center;
 }
 .container-feedback i{ font-size: 32px; color: #0a35df}
 
-#my-dialog{ display: none; position: absolute; right: 0px; bottom:43px;  width: 300px; height:215px; background-color: blueviolet;}
+#my-dialog{ display: none; position: absolute; right: 0px; bottom:43px;  width: 300px; height:215px; border-radius: 16px; background-color: #68b3f3;}
 #my-dialog form {width: 90%; margin: auto;}
 #my-dialog form *{width: 100%; margin: 10px auto; outline: none; border: none;}
 #my-dialog form input[type='email']{ height: 30px; padding-left: 5px;} 
@@ -129,7 +129,9 @@ div#footer #social-media{
 
 /*Design HEADER and FOOTER for mobile and tablet*/
 @media (max-width: 1024px) {
-    /* #header{ display: none !important;} */
+    body{
+        background-image: none;
+    }
     #header{
         position: fixed;
         top: 0;
@@ -137,7 +139,7 @@ div#footer #social-media{
         height: 100vh;       
         height: -webkit-fill-available; 
         max-height: fill-available;
-        background-color: #435ab8;
+        background-color: #f7f8fc;
         z-index: 1;
         display: none;
     }
@@ -145,8 +147,9 @@ div#footer #social-media{
     #header nav ul{ flex-direction: column;
     height: 100vh;}
 
-    #header nav ul li a{color: #fff;}
-        
+    #header nav ul li a{color: #404146;}
+    div#footer{flex-direction: column; height: calc(100vh * 0.1);}
+    
 }
 
 @media (min-height: 615px) {
