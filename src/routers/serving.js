@@ -14,6 +14,8 @@ pagesServingRouter.get('/help(.html)?', (req, res) => { res.render('help'); });
 
 pagesServingRouter.get('/login(.html)?', (req, res) => { res.render('login'); });
 
+pagesServingRouter.get('/register(.html)?', (req, res) => { res.render('register'); });
+
 pagesServingRouter.get('*', (req, res) => { //console.log(req.url);
     let msg = req.url.length > 15 ? "you typed and" : req.url;  
     res.render('404', { pageMsg: `${msg}` });

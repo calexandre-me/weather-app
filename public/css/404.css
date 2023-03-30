@@ -28,7 +28,6 @@ div#content .label-message{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 div#content .label-message p{
@@ -48,11 +47,14 @@ div#content .label-message p{
     }
 
     div#content .label-image img{
-        width: 350px;
+        width: 320px;
         height: auto;
     }
 
-    div#content .label-message{
-        width: 100%;
+    div#content .label-message p{
+        font-size: 18px;
     }
+}
+@media (orientation: landscape) {
+    div#content{ flex-direction: row;}
 }

@@ -5,9 +5,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{>link_url}}
+    <link rel="stylesheet" href="/css/about.css">
     <title>About</title>
 </head>
 <body>
-    
+    <div id="global-container">
+        {{>header}}
+        <div id="content">
+            <div class="title">
+                <h1>About</h1>
+            </div>
+        
+            <div class="myTabs">
+                <input type="radio" name="tabs" id="description" >
+                <label for="description" class="desc-label"  name="first">Description</label>
+                <div class="tab">
+                    <h2>About the project</h2>
+                    {{!-- Add project story --}}
+                    <div class="overview-project">
+                        <div class="story">
+                            <h3>Story</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione earum fugit recusandae nihil suscipit vel asperiores aliquam, sunt fuga minima repudiandae cumque in velit dolores aperiam, veniam soluta. Magnam, tempore.</p>
+                        </div>
+                        <div class="goal">
+                            <h3>Goal</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nobis porro, amet maiores alias recusandae necessitatibus animi voluptas exercitationem, minima, enim debitis. Non blanditiis eveniet, tenetur quasi voluptate id minima.</p>
+                        </div>
+                        <div class="features">
+                            <h3>Features</h3>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, enim aliquam. Ipsa incidunt nostrum perspiciatis quia asperiores voluptates similique nulla consequuntur dolore, nobis assumenda hic facilis illum atque accusamus dolorum?</p>
+                        </div>
+                    </div>
+                    {{!-- Add project objective --}}
+                    {{!-- New features comming --}}
+                    
+                </div>
+                <input type="radio" name="tabs" id="creator" >
+                <label for="creator" class="desc-label">Creator</label>
+                <div class="tab">
+                    <h2>Presentation of the creator</h2>
+                    <div class="profile">
+                        <div class="image-profile"><img src="/images/bot.png" alt="Profile Image"></div>
+                        <div class="description-profile">
+                            <p>Hi, I am Charles. I am a graduated Software Engineer. I have been coding front-end for 4 months and that is going well. Hi, I am Charles. I am a graduated Software Engineer. I have been coding front-end for 4 months and that is going well.</p>
+                        </div>
+                        <div class="hobbies">
+                            <p> My hobbies are the followings:
+                                <ul class="hobby-list">
+                                    <li>Create nice and useful website</li>
+                                    <li>Play football</li>
+                                    <li>Watch series</li>
+                                    <li>Help people</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <input type="radio" name="tabs" id="share" checked>
+                <label for="share" class="desc-label"  name="last">Support/Share</label>
+                <div class="tab">
+                    <h2>Share the project</h2>
+                    <div class="share-rate">
+
+                        <div class="rate">
+                            <div>
+                              <input type="radio" name="rate" id="five" value="5">
+                              <label for="five"></label>
+                              <input type="radio" name="rate" id="four" value="4">
+                              <label for="four"></label>
+                              <input type="radio" name="rate" id="three" value="3">
+                              <label for="three"></label>
+                              <input type="radio" name="rate" id="two" value="2">
+                              <label for="two"></label>
+                              <input type="radio" name="rate" id="onw" value="1">
+                              <label for="one"></label>
+                              <span></span>&nbsp;<span></span>&nbsp;<span></span>&nbsp;<span></span>&nbsp;<span></span>
+                            </div>
+                            <button id="send-rate">Send</button>
+                        </div>
+                        <div class="share">
+                            <h3>Share it further</h3>
+                            <p>You can bring the proj. to other just by a simple click...</p>
+                            <div class="add-sharing">
+                                <button name="g">G</button>
+                                <button name="vk">VK</button>
+                                <button name="ms">MS</button>
+                                <button name="lk"><i class="fa-solid fa-link"></i></button>
+                            </div>
+                        </div>
+
+                    </div>    
+                </div>
+
+            </div>
+        </div>
+        {{>commentbox}}
+        {{>footer}}
+    </div>
 </body>
 </html>

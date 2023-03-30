@@ -1,0 +1,47 @@
+
+#bottom-menu{
+    width: 100%;
+    height: 6vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-pages{
+    width: 60%;
+}
+
+.menu-pages nav ul, .social-media-link{
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+}
+
+.menu-pages nav ul{
+    list-style: none;
+    justify-content: space-around;
+    line-height: 6vh;
+}
+
+.menu-pages nav li{
+    height: 100%;
+}
+
+.menu-pages nav li a{
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.social-media-link{
+    width: 40%;
+    justify-content: space-evenly;
+    padding-top: 5px;
+}
+
+.social-media-link a{
+   background-color: aliceblue;
+   height: fit-content;
+   border-radius: 50%;
+}
+
+.social-media-link a:hover{background-color: greenyellow;}

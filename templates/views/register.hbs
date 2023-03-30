@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>lr_link_url}}
+    <link rel="stylesheet" href="/css/register.css">
+    <script src="/js/register.js"></script>
+    <title>Register</title>
+</head>
+<body>
+    <div id="container">
+        <div class="container-form">
+            <form action="">
+                <h1>Registration form</h1>
+                <div>
+                    <label for="username">Your Name</label>
+                    <input type="text" placeholder="Ex: Mario" id="username" maxlength="20" required>
+                </div>
+                <div>
+                    <label for="email">Your Email</label>
+                    <input type="text" placeholder="something@provider.com" id="email" required>
+                </div>
+                <div>
+                    <label for="password">Your Password</label>
+                    <input type="passowrd" placeholder="xxxxxxxx" id="password" minlength="8" required>
+                </div>
+                <div>
+                    <label for="age">Your Age</label>
+                    <input type="number" id="age" min="6" max="120" placeholder="Ex: 6-1xx yrs">
+                </div>
+                <div>
+                <label for="region">Select your rergion:</label>
+                <select name="region" id="region">
+                    <optgroup label="Africa">
+                        <option value="nigeria">Nigeria</option>
+                        <option value="ghana">Ghana</option>
+                        <option value="egypt">Egypt</option>
+                    </optgroup>
+                    <optgroup label="America">
+                        <option value="usa">USA</option>
+                        <option value="canada">Canada</option>
+                        <option value="Brazil">Korea</option>
+                    </optgroup>
+                    <optgroup label="Asia">
+                        <option value="china">China</option>
+                        <option value="china">Japan</option>
+                        <option value="china">Korea</option>
+                    </optgroup>
+                    <optgroup label="Asia">
+                        <option value="china">China</option>
+                        <option value="china">Japan</option>
+                        <option value="china">Korea</option>
+                    </optgroup>
+                </select>
+                </div>
+            
+                <button name="signup">Sign up</button>
+                <button name="login"><a href="/login">Already user</a></button>
+            </form>
+        </div>
+        {{>submenu}}
+    </div>
+</body>
+</html>
