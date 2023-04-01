@@ -3,10 +3,10 @@
         <i class="fa-solid fa-comments"></i>
     </div>
     <div id="my-dialog">
-        <form method="POST" action="/comment" autocomplete="off"  >
+        <form method="POST" autocomplete="off" id="form" >
             
-            <input type="email" id="email" placeholder="Email" autocomplete="false"/>
-            <textarea maxlength="100" id="text-comment" placeholder="Send a 100 length message..." autocomplete="false" ></textarea>
+            <input type="email" id="email" name="email" placeholder="Email" autocomplete="false"/>
+            <textarea maxlength="100" id="text-comment" name="comment" placeholder="Send a 100 length message..." autocomplete="false" ></textarea>
             <input type="submit" value="Submit" id="submit"/>
         </form>
     </div>

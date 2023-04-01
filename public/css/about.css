@@ -2,14 +2,12 @@ div#content{
     width: 98%;
     margin: auto;
     height: calc(100vh * 0.78);
-    background-color: rgba(240, 255, 255, 0.5);
     padding: 45px 20px 10px 20px;
     display: grid;
     grid-template-rows: 0.2fr 1fr;
-    border: 1px solid blue;
 }
 
-.title h1{text-align: right; border-bottom: 3px solid rgb(77, 109, 252)}
+.title h1{text-align: right; border-bottom: 3px solid #4d6dfc}
 
 .myTabs{
     width: 100%;
@@ -21,23 +19,22 @@ div#content{
 }
 
 .myTabs input[type="radio"]{ display: none; width: 100%;}
-.myTabs label.desc-label{ padding: 16px; font-size: 18px; background-color: rgb(97, 186, 250);  border-right: 1px solid rgba(88, 83, 83, 0.653);}
-label[name="first"]{ border-radius: 10px 0 0 0px; }
-label[name="last"]{ border-radius: 0 10px 0 0; }
-.myTabs div.tab{ display: none; background-color: rgb(255, 255, 255);  padding: 24px; width: 100%; height: 290px; overflow: auto;  order: 1;}
+.myTabs label.desc-label{ padding: 16px; font-size: 18px; background-color: hsl(208, 100%, 77%);  border-right: 1px solid rgba(88, 83, 83, 0.653);}
+
+.myTabs div.tab{ display: none; padding: 24px; width: 100%; height: 290px; overflow: auto;  order: 1;}
 .tab *{padding:5px; text-align: justify;} 
 
 .profile,
 .overview-project,
 .share-rate{ display: flex; gap: 8px; justify-content: center; align-items: center; align-content: center; margin: auto;}
 
-.profile{  box-shadow: 3px 3px #add4ff80, -0.4em 0 .4em #97b1ed; background-color: rgb(217, 230, 246) }
+.profile{  box-shadow: 3px 3px #add4ff80, -0.4em 0 .4em #97b1ed; }
 .profile .description-profile p{width: 300px;}
 
 .hobby-list{padding-left: 48px;}
 
 .myTabs input[type="radio"]:checked + label + div.tab{ display: block; }
-.myTabs input[type="radio"]:checked + label{ background-color: rgb(255, 255, 255); border-radius: 0 !important; }
+.myTabs input[type="radio"]:checked + label{ background-color: #0077cc; border-radius: 0 !important; }
 
 .rate, .share{width: 50%; background-color: red; height: fit-content}
 
@@ -45,14 +42,10 @@ label[name="last"]{ border-radius: 0 10px 0 0; }
 .add-sharing button{ width: 54px; height: 54px; outline: none; border: none;  padding: 15px; font-size: 18px; margin: 2px 5px; color: white; text-align: center;}
 button[name="g"]{background-color: #bd0e0e;} button[name="vk"]{background-color: #0a48e3;} 
 button[name="ms"]{background-color: #1b0892;} button[name="lk"]{background-color: #089208; padding: 0;}
-@media (max-width: 575px) {
-    .myTabs{
-        justify-content: flex-start;
-    }
-    .myTabs label{ padding: 8px; }
-    
+@media (max-width:785px) {
+    .rate, .share{width: 100%;}
 }
 
 @media (max-width: 1024px) {
-    .profile, .overview-project, .share-rate{flex-direction: column;}
+    .profile, .overview-project, .share-rate{flex-direction: column; width: 100%;}
 }

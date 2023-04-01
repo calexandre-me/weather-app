@@ -4,7 +4,7 @@
   "description": "A simple web application where any user can get access to weather information for a specific location.",
   "main": "src/app.js",
   "scripts": {
-    "live": "nodemon src/app.js",
+    "live": "nodemon src/app.js -e hbs",
     "start": "node src/app.js"
   },
   "keywords": [],

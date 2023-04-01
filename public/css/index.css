@@ -2,7 +2,6 @@ div#content{
     width: 98%;
     margin: auto;
     height: calc(100vh * 0.78);
-    background-color: rgba(240, 255, 255, 0.5);
     padding: 45px 20px 10px 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -21,10 +20,7 @@ div#content{
     text-align: justify;
 }
 
-#site-name{
-    font-family: snowball;
-    font-size: 1.5em;
-}
+#site-name{ font-family: snowball; font-size: 1.5em; }
 
 #content-header img{
     width: 50%;
@@ -47,9 +43,7 @@ div#content-boxes .box{
     overflow-y: auto;
 }
 
-div#content-boxes .box h3{
-    border-bottom: 2px solid black;
-}
+div#content-boxes .box h3{ border-bottom: 2px solid rgb(134, 134, 77); }
 
 div#content-boxes .box p{
     padding: 5px;
@@ -66,16 +60,11 @@ div#content #content-right-side{
     width: 100%;   
 }
 
-div#content #content-right-side img{
-    width: 150px;
-    height: 170px;
-    user-select: none;
-}
+div#content #content-right-side img{ width: 150px; height: 150px; user-select: none; }
 
 @media (max-width: 1024px) {
-   
-    div#content{ padding-top: 35px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 25px;}
-    #content-header{ width: 100% !important;  height: fit-content !important;}
+    div#content{ width:100% !important; padding-top: 35px; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+    #content-header{ height: fit-content !important;}
     #content-boxes{ display: none !important;}
     div#content #content-right-side img{ width: 54px; height: 54px;}
 }
@@ -84,4 +73,3 @@ div#content #content-right-side img{
     #content-left-side #content-header{ height: 200px; }
     #content-header #feature-img{ display: none;}
 }
-
