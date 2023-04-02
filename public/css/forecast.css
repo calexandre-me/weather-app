@@ -33,7 +33,7 @@
 #content #search-bar form input::placeholder{ font-size: 16px; }
 
 #content #search-bar form button{
-    background-color: rgb(79, 91, 225);
+    background-color: rgb(1, 19, 222);
     border-radius: 0 10px 10px 0;
     color: whitesmoke;
     font-weight: bold;
@@ -79,10 +79,10 @@
 .hide{ display:block; }
 
 #content .server-message{
-    background-color: #fb3838;
+    background-color: #ff7373;
     margin:10px;
     padding: 10px;
-    color: #ffffff;
+    color: #2d1010;
 }
 
 @media (max-width: 1024px) {

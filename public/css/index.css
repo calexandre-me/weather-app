@@ -1,10 +1,11 @@
 div#content{
     width: 98%;
     margin: auto;
-    height: calc(100vh * 0.78);
+    height: calc(100vh * 0.799);
     padding: 45px 20px 10px 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    overflow: hidden;
     gap: 10px;
 }
 
@@ -63,7 +64,7 @@ div#content #content-right-side{
 div#content #content-right-side img{ width: 150px; height: 150px; user-select: none; }
 
 @media (max-width: 1024px) {
-    div#content{ width:100% !important; padding-top: 35px; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+    div#content{ width:100% !important; overflow: auto; padding-top: 35px; display: flex; flex-direction: column; justify-content: center; align-items: center;}
     #content-header{ height: fit-content !important;}
     #content-boxes{ display: none !important;}
     div#content #content-right-side img{ width: 54px; height: 54px;}

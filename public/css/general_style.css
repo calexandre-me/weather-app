@@ -1,9 +1,10 @@
 @font-face { font-family: rubik; src: url("../font/Rubik-Light.ttf"); }
 @font-face { font-family: snowball; src: url("../font/CfSnowballRegular-8xp2.ttf"); }
+@font-face { font-family: roboto; src: url("../font/Roboto.ttf"); }
 
 *{ margin: 0; padding: 0; box-sizing: border-box; }
 
-a{color: #010129}
+a{color: #170247}
 button{border: none; outline: none; background-color: transparent;}
 
 html, body, header{
@@ -13,36 +14,40 @@ html, body, header{
     height: -moz-available;          
     height: -webkit-fill-available; 
     height: fill-available;
+    overflow: hidden;
 }
 
 body{
-    background-image: url("../images/weather-bg.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    font-family: rubik;
+    font-family: roboto;
+    letter-spacing: 1px;
 }
 
 #global-container{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    background-color: #4fa9f8bf;
-    padding-top: 5px;
+    background: linear-gradient(to right, #3f7af0, #64aff5);
     position: relative; 
-    font-weight: 550;
-    color: #131415;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
 }
 
 /*Shared selection*/
-#header, #footer{ width: 98%; margin: 0 auto 0 auto;  background-color: #f0f8ff; color: #323338; }
+#header, #footer{ 
+width: 98%; margin: 0 auto 0 auto;
+background: rgba(255, 255, 255, 0.2);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(0px);
+-webkit-backdrop-filter: blur(0px);
+border: 1px solid rgba(255, 255, 255, 0.04);
+ }
 
 /*Style for HEADER and NAVIGATION MENU*/
-#header, #header nav, #header nav ul{ height: calc(100vh * 0.15);}
+#header, #header nav, #header nav ul{ height: calc(100vh * 0.15); border-radius: 0 0 16px 16px;}
 
-.open-mobile-bars, .close-mobile-bars { display: none;  background-color: #f0f8ff;}
-.open-mobile-bars button, .close-mobile-bars button{ font-size: 32px;}
-.open-mobile-bars button{ background-color: #f0f8ff; margin: 0 25px; padding: 2px 8px; border-radius: 10px; color: #131516; text-align: center;}
-.open-mobile-bars span{ font-size: 22px; font-weight: bolder; color:#4fa9f8;}
+.open-mobile-bars, .close-mobile-bars { display: none;}
+.open-mobile-bars button, .close-mobile-bars button{ font-size: 32px; color: #feffff;}
+.open-mobile-bars button{  margin: 0  0 0 25px; padding: 4px 8px; text-align: center;}
+.open-mobile-bars span{ font-size: 16px; font-weight: bolder; color:#ffffff;}
 .close-mobile-bars { z-index: 10; position: absolute; right: 20px; top: 5px; }
 
 #header nav ul{ 
@@ -56,23 +61,23 @@ body{
 #header nav ul li#logo-wp{ user-select: none;}
 #header nav ul li{ border-bottom: 3px solid transparent; }
 #header nav ul li:hover:not(#logo-wp){
-    border-bottom: 3px solid #23405a;
+    border-bottom: 3px solid #3f7af0;
     transition: border-bottom 0.5s;
 }
 
 #header nav ul li a{
     text-decoration: none;
     font-size: 16px;
-    color: #131516;
+    color: #ffffff;
     text-transform: uppercase;
     text-align: center;
 }
 /*==========================*/
 
 /*Style for dialog box*/
-.container-feedback{ width: 102px; height: 42px; position: absolute; bottom: 4.5%; right: 0; text-align: center; }
+.container-feedback{ width: 102px; height: 42px; position: absolute; bottom: 10%; right: 0; text-align: center; z-index: 2;}
 .container-feedback:hover #my-dialog{ transition: all 0.4s; display: block; }
-.container-feedback i{ font-size: 32px; padding: 10px; color: #001867; background-color: #ffffff; border-radius: 50%;}
+.container-feedback i{ font-size: 32px; padding: 6px; color: #001867; background-color: #ffffff; border-radius: 50%;}
 #my-dialog{ display: none; position: absolute; right: 0px; bottom:43px;  width: 300px; height:215px; border-radius: 16px; background-color: transparent;}
 #my-dialog form {width: 90%; margin: auto;}
 #my-dialog form *{width: 100%; margin: 10px auto; outline: none; border: none;}
@@ -114,7 +119,7 @@ div#footer #social-media{
     justify-content: space-around;
 }
 
-div#footer #social-media a{font-size: 24px; color:#131415 }
+div#footer #social-media a{font-size: 24px; color:rgb(232, 232, 232); }
 
 #notice{ display: none; padding: 15px; background-color: #dbe3ff; width: 320px; height: 160px; position: absolute;bottom: 0px; left: calc(50% - 160px);}
 #notice h2{ margin-bottom: 15px;}
@@ -149,8 +154,9 @@ div#footer #social-media a{font-size: 24px; color:#131415 }
         height: -webkit-fill-available; 
         max-height: fill-available;
         z-index: 1;
-        overflow: auto;
+        overflow: hidden;
         display: none;
+        background-color: #4fa9f8;
     }
     #header, #header nav{ height: 100vh;}
 
@@ -166,7 +172,7 @@ div#footer #social-media a{font-size: 24px; color:#131415 }
 
 
 .dark-theme{ background-color: #101112 !important; color: #ffffff !important; }
-.dark-theme *{ color: rgb(225, 222, 231) !important; }
+.dark-theme *{ color: #e1dee7 !important; }
 .global-dark-theme{ background-color: #0a1723bf !important; color: #fff !important}
 .global-dark-theme a{ color: yellow}
 .global-dark-theme h1, 

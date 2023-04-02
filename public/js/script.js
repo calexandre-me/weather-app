@@ -1,8 +1,8 @@
-const notice = document.getElementById('notice');
+// const notice = document.getElementById('notice');
 
-setTimeout(function(){notice.style.display = 'block'; notice.style.animationName = 'popUp'}, 3000);
+// setTimeout(function(){notice.style.display = 'block'; notice.style.animationName = 'popUp'}, 3000);
 
-setTimeout( function(){notice.style.display = 'none'}, 8000);
+// setTimeout( function(){notice.style.display = 'none'}, 8000);
 
 
 const openMobileMenu = document.getElementById('open-menu');
