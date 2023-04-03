@@ -14,33 +14,47 @@
             <h3>Enter a (Postal code/City/Country/) of a location in the box bellow to get a full resume of the forecasts.</h3>
         </div>
         <div id="search-bar">
-            <form action="">
+            <form>
                 <input type="text" id="target-location" placeholder="Ex: Boston"><button>Get Weather</button>
             </form>
         </div>
-        <div class="table-resume hide">
-            <table>
-                <caption>
-                    <h3>Weather resume</h3>
-                </caption>
-               
-                <tbody>
-                    {{!-- <tr><td>Description</td><td><span class="result">...</span></td></tr> --}}
-                    <tr title="Current time"><td>Time</td><td><span class="result">...</span></td></tr>
-                    <tr title="Weather description"><td>Description</td><td><img class="result" width="24" height="24"></td></tr>
-                    <tr title="Temperature"><td><i class="fa-solid fa-temperature-high"></i></td><td><span class="result">...</span> degree(s)</td></tr>
-                    <tr title="Feelslike"><td><i class="fa-solid fa-temperature-low"></i><i class="fa-solid fa-wave-square"></i></td><td><span class="result">...</span> degree(s)</td></tr>
-                    <tr title="Windspeed"><td><i class="fa-solid fa-wind"></i></td><td><span class="result">...</span> (km/h)</td></tr>
-                    <tr title="Visibility"><td><i class="fa-solid fa-eye"></i></td><td><span class="result">...</span> m</td></tr>
-                    <tr title="Humidity"><td><i class="fa-solid fa-rainbow"></i></td><td><span class="result">...</span> m</td></tr>
-                    <tr title="Pressure"><td><i class="fa-solid fa-gauge"></i></td><td><span class="result">...</span> m</td></tr>
-                    <tr title="Precipitation"><td><i class="fa-solid fa-cloud-rain"></i></td><td><span class="result">...</span> g.m <sup>-3</sup></td></tr>
-                    
-                </tbody>
-                <tfoot>
-                    <td colspan="2">The forecast for <span id="txt-resume" class="result"></span>. Thanks for consulting us!</td>
-                </tfoot>
-            </table>
+        <div class="table ">
+            <div id="for-o">
+                <p class="result">Time</p>
+                <img class="result" width="24" height="24">
+                <p><span class="result"></span>&nbsp;<sup>o</sup>C</p>
+            </div>
+            <h3>Additional info</h3>
+            <div class="first-row">
+                <table>
+                    <tr>
+                         <th title="Feelslike"><i class="fa-solid fa-temperature-low"></i><i class="fa-solid fa-wave-square"></i></th>
+                         <th title="Windspeed"><i class="fa-solid fa-wind"></i></th>
+                         <th title="Visibility"><i class="fa-solid fa-eye"></i></th>             
+                    </tr>
+                    <tr>
+                        <td><span class="result">...</span> degree(s)</td>
+                        <td><span class="result">...</span> (km/h)</td>
+                        <td><span class="result">...</span> m</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="second-row">
+                <table>
+                    <tr>
+                        <th title="Humidity"><i class="fa-solid fa-rainbow"></i></th>
+                        <th title="Pressure"><i class="fa-solid fa-gauge"></i></th>
+                        <th title="Precipitation"><i class="fa-solid fa-cloud-rain"></i></th>
+                    </tr>
+                    <tr>
+                        <td><span class="result"></span> m</td>
+                        <td><span class="result"></span> m</td>
+                        <td><span class="result"></span> g.m <sup>-3</sup></td>
+                    </tr>
+                </table>
+            </div>
+            <p>The forecast at <span id="txt-resume" class="result"></span>. Thanks for consulting us!</p>
+                
         </div>
         <div class="server-message hide">
             <p id="message">The current location is incorrect</p>

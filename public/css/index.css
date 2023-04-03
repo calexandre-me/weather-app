@@ -2,7 +2,7 @@ div#content{
     width: 98%;
     margin: auto;
     height: calc(100vh * 0.799);
-    padding: 45px 20px 10px 20px;
+    padding: 45px 15px 10px 15px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
@@ -11,24 +11,32 @@ div#content{
 
 #content-left-side #content-header{
     width: 80%;
-    height: 265px;
+    height: 215px;
     margin: 0px auto 0px auto;
 }
 
 #content-header p{
     font-size: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-align: justify;
 }
 
 #site-name{ font-family: snowball; font-size: 1.5em; }
 
-#content-header img{
-    width: 50%;
-    height: 40%;
-    margin: auto;
+#content-header a{text-decoration: none;}
+
+#content-header a button{
+    width: 180px;
+    height: 45px;
     display: block;
+    font-size: 24px;;
     user-select: none;
+    background-color: #fff;
+    color: #4fa9f8;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10px;
+    cursor: pointer;
 }
 
 div#content-boxes{
@@ -40,7 +48,7 @@ div#content-boxes{
 
 div#content-boxes .box{
     width: 210px;
-    height: auto;
+    height: fit-content;
     overflow-y: auto;
 }
 
@@ -52,25 +60,28 @@ div#content-boxes .box p{
     font-size: 16px;
 }
 
+
 div#content #content-right-side{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;   
+    display: none;
 }
 
 div#content #content-right-side img{ width: 150px; height: 150px; user-select: none; }
 
+@media (min-width: 1025px){
+    div#content #content-right-side{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;   
+    }
+
+}
+
 @media (max-width: 1024px) {
-    div#content{ width:100% !important; overflow: auto; padding-top: 35px; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+    div#content{ padding: 0; width:100% !important; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center;}
     #content-header{ height: fit-content !important;}
     #content-boxes{ display: none !important;}
     div#content #content-right-side img{ width: 54px; height: 54px;}
-}
-
-@media (max-height: 615px) or (max-width: 1024px)  {
-    #content-left-side #content-header{ height: 200px; }
-    #content-header #feature-img{ display: none;}
 }

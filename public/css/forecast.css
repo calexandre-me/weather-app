@@ -1,7 +1,6 @@
 #content{
     width: 98%;
     height: calc(100vh * 0.76);
-    /* background: rgba(158, 7, 7, 0.1); */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,7 +11,7 @@
 
 #content #title h3{ width: fit-content; font-size: 19px; text-align: center;}
 
-#content #search-bar form{display: flex; justify-content: center;}
+#content #search-bar form{ display: flex; justify-content: center; flex-wrap: wrap;}
 
 #content #search-bar form input,
 #content #search-bar form button{ 
@@ -24,8 +23,7 @@
 }
 
 #content #search-bar form input{
-    width: 350px;
-    border-radius: 10px 0 0 10px;
+    width: 310px;
     font-style: italic;
     text-transform: uppercase;
 }
@@ -33,60 +31,53 @@
 #content #search-bar form input::placeholder{ font-size: 16px; }
 
 #content #search-bar form button{
-    background-color: rgb(1, 19, 222);
-    border-radius: 0 10px 10px 0;
-    color: whitesmoke;
+    background-color: #044cab;
+    color: rgb(255, 252, 252);
     font-weight: bold;
     cursor: pointer;
 }
 
 #content #search-bar form button:hover{ transition: 200ms ease-in; background-color: rgb(5, 126, 5);}
 
-#content .table-resume{
+#content .table{
     position: absolute;
     width: 50%;
     min-width: 300px;
-    height: 450px;
-    padding: 20px;
+    height: fit-content;
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8.2px);
     -webkit-backdrop-filter: blur(5.5px);
-    border: 1px solid rgba(255, 255, 255, 0.42);
-    margin: 5px auto 5px auto;
-    
+    border: 1px solid rgba(255, 255, 255, 0.42);    
+    margin: 100px auto;
+    z-index: 10;
+    background-color: #004ead2a;
 }
 
-#content .table-resume table{
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  text-align: center;
-  overflow-x: auto;
-  border-spacing: 10px;
+.table #for-o p,
+.table #for-o img{ display: block; width: 80%; margin: 5px auto; text-align: center; font-size: 25px; font-weight: bold;}
+
+.table #for-o img{
+   width: 100px;
+   height: 100px;
+   background-color:
+    transparent;
 }
 
-#content .table-resume table caption{ padding: 5px 0; }
+#content .table table{ width: 95%; margin: 25px auto; text-align: center; }
 
-#content .table-resume table td{padding: 0;} 
+#content .table table tr th{padding: 8px 0; background-color: #2f7fe7;}
 
-#content .table-resume table td img{width:24px; height: 24px;}
-#content .table-resume table td i{color: #3a488d; font-size: 22px;}
-.result{
-    width: 200px;
-}
+#content .table  p,
+#content .table  h3{text-align: center;}
 
-.hide{ display:block; }
-
-#content .server-message{
-    background-color: #ff7373;
-    margin:10px;
-    padding: 10px;
-    color: #2d1010;
-}
+.hide{ display: none; };
 
 @media (max-width: 1024px) {
-    #content #search-bar form{flex-direction: column; gap: 15px}
-    #content #search-bar form input,
-    #content #search-bar form button{ width: 250px; border-radius: 0 !important;}
+    .table #for-o img{ width: 70px; height: 70px;}
+}
+
+@media (orientation: landscape) and (max-height: 390px) {
+    #content .table{ width: 90%; }
+    .table #for-o img{ width: 50px; height: 50px;}
 }

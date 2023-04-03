@@ -19,7 +19,7 @@ div#content{
 }
 
 .myTabs input[type="radio"]{ display: none; width: 100%;}
-.myTabs label.desc-label{ padding: 16px; font-size: 18px; background-color: hsl(208, 100%, 77%);  border-right: 1px solid rgba(88, 83, 83, 0.653);}
+.myTabs label.desc-label{ padding: 16px; font-size: 18px; background-color: #0077cc;  border-right: 1px solid rgba(88, 83, 83, 0.653);}
 
 .myTabs div.tab{ display: none; padding: 24px; width: 100%; height: 290px; overflow: auto;  order: 1;}
 .tab *{padding:5px; text-align: justify;} 
@@ -29,14 +29,14 @@ div#content{
 .share-rate{ display: flex; gap: 8px; justify-content: center; align-items: center; align-content: center; margin: auto;}
 
 .profile{  box-shadow: 3px 3px #add4ff80, -0.4em 0 .4em #97b1ed; }
-.profile .description-profile p{width: 300px;}
+.profile .description-profile p{width: 300px; }
 
 .hobby-list{padding-left: 48px;}
 
 .myTabs input[type="radio"]:checked + label + div.tab{ display: block; }
-.myTabs input[type="radio"]:checked + label{ background-color: #0077cc; border-radius: 0 !important; }
+.myTabs input[type="radio"]:checked + label{ background-color: transparent; border-radius: 0 !important; }
 
-.rate, .share{width: 50%; background-color: red; height: fit-content}
+.rate, .share{width: 50%; height: fit-content}
 
 .share .add-sharing{margin-top: 10px;}
 .add-sharing button{ width: 54px; height: 54px; outline: none; border: none;  padding: 15px; font-size: 18px; margin: 2px 5px; color: white; text-align: center;}
@@ -44,6 +44,10 @@ button[name="g"]{background-color: #bd0e0e;} button[name="vk"]{background-color:
 button[name="ms"]{background-color: #1b0892;} button[name="lk"]{background-color: #089208; padding: 0;}
 @media (max-width:785px) {
     .rate, .share{width: 100%;}
+}
+
+@media (width < 400px) {
+    .profile .description-profile p{width: 200px;}
 }
 
 @media (max-width: 1024px) {

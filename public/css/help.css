@@ -1,7 +1,7 @@
 #global-container{
     padding-top: 0;
 }
-
+*{color: #fff}
 div#header-colored-bar{
     width: 100%;
     height: 10px;
@@ -89,7 +89,7 @@ div#header-colored-bar div#orange{
     font-style: italic;
     outline: none;
     border: 1px solid transparent;
-    background-color: #ffebe5;
+    background-color: #044cab;
     border-radius: 10px 10px 0px 10px;
   }
   
@@ -114,7 +114,7 @@ div#header-colored-bar div#orange{
     border: 1px dotted white;
     border-top: none;
     border-radius: 0px 0px 10px 10px;
-    background-color: rgba(10, 235, 0, 0.2);
+    background-color: rgba(4, 62, 1, 0.2);
     display: none;
   }
 

@@ -43,7 +43,7 @@ formEl.addEventListener('submit', (e)=>{
 })
 
 const switcher = document.getElementById('switch');
-const globalContainer = document.getElementById('global-container');
+const content = document.getElementById('content');
 const footer = document.getElementById('footer');
 
 switcher.addEventListener('click', ()=>{
@@ -56,10 +56,12 @@ switcher.addEventListener('click', ()=>{
     }
 
     
+    header.classList.toggle('dark-theme');
     header.lastElementChild.classList.toggle('dark-theme');
+    header.lastElementChild.firstElementChild.classList.toggle('dark-theme');
     openMobileMenu.parentElement.classList.toggle('mb-menu')
     openMobileMenu.classList.toggle('mb-menu')
     closeMobileMenu.classList.toggle('mb-menu')
-    globalContainer.classList.toggle('global-dark-theme');
+    content.classList.toggle('global-dark-theme');
     footer.classList.toggle('dark-theme');
 }); 

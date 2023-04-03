@@ -1,10 +1,10 @@
 console.log('Hi this is forecast.');
 
 const searchWeather = document.querySelector("form");
-const [table] = document.getElementsByClassName("table-resume");   
+const [table] = document.getElementsByClassName("table");   
 
 document.addEventListener('click', (e)=>{
-    if(!e.target.classList.contains('table-resume')){
+    if(!e.target.classList.contains('table')){
         table.style.display = 'none';
     }
 })
@@ -21,7 +21,7 @@ searchWeather.addEventListener("submit", (event) => {
         const serverMessage = document.getElementById('message'); 
 
         const txtResume = document.getElementById('txt-resume');      
-        const [tableWeather] = document.getElementsByClassName('table-resume');
+        const [tableWeather] = document.getElementsByClassName('table');
             if(!data.error){
                 if(tableWeather.classList.contains('hide')){
                     tableWeather.classList.remove('hide')
@@ -55,7 +55,12 @@ searchWeather.addEventListener("submit", (event) => {
                 if(serverMessageBox.classList.contains('hide')){
                     serverMessageBox.classList.remove('hide');
                 }
-                serverMessage.style.fontWeight = 'bold';
+                
+                Object.assign(serverMessageBox.style, {
+                    backgroundColor: '#D60d0d',
+                    padding: '10px'
+                  });
+
                 serverMessage.textContent = data.error;
             }
         })
