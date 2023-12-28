@@ -1,83 +1,232 @@
-#content{
-    width: 98%;
-    height: calc(100vh * 0.76);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin: 0 auto;
+section.iservices{
+  background: url("/images/forecast-bg.jpg");
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-#content #title h3{ width: fit-content; font-size: 19px; text-align: center;}
-
-#content #search-bar form{ display: flex; justify-content: center; flex-wrap: wrap;}
-
-#content #search-bar form input,
-#content #search-bar form button{ 
-    height: 45px;
-    outline: none;
-    border: none;
-    font-size: 16px;
-    padding: 5px;
+#forecast-display{
+  height: calc(100vh - 72px);
 }
 
-#content #search-bar form input{
-    width: 310px;
-    font-style: italic;
-    text-transform: uppercase;
+#written-display{
+  height: 60%;
+  gap: 32px;
 }
 
-#content #search-bar form input::placeholder{ font-size: 16px; }
-
-#content #search-bar form button{
-    background-color: #044cab;
-    color: rgb(255, 252, 252);
-    font-weight: bold;
-    cursor: pointer;
+#w-result-box{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(152px, auto)) ;
+  grid-template-rows: repeat(2, auto);
+  align-content: space-around;
+  justify-content: space-around;
+  margin-bottom: 24px;
 }
 
-#content #search-bar form button:hover{ transition: 200ms ease-in; background-color: rgb(5, 126, 5);}
-
-#content .table{
-    position: absolute;
-    width: 50%;
-    min-width: 300px;
-    height: fit-content;
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8.2px);
-    -webkit-backdrop-filter: blur(5.5px);
-    border: 1px solid rgba(255, 255, 255, 0.42);    
-    margin: 100px auto;
-    z-index: 10;
-    background-color: #004ead2a;
+.w-wrapper{
+  box-shadow: 1px 1px 4px hsl(240, 100%, 90%), -1px -1px 4px hsl(120, 100%, 90%);
+  width: 152px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 4px;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 
-.table #for-o p,
-.table #for-o img{ display: block; width: 80%; margin: 5px auto; text-align: center; font-size: 25px; font-weight: bold;}
-
-.table #for-o img{
-   width: 100px;
-   height: 100px;
-   background-color:
-    transparent;
+.w-wrapper span,
+.w-data span{
+  font-size: 0.85rem;
 }
 
-#content .table table{ width: 95%; margin: 25px auto; text-align: center; }
-
-#content .table table tr th{padding: 8px 0; background-color: #2f7fe7;}
-
-#content .table  p,
-#content .table  h3{text-align: center;}
-
-.hide{ display: none; };
-
-@media (max-width: 1024px) {
-    .table #for-o img{ width: 70px; height: 70px;}
+.w-data .data-value{
+  font-size: 1.25rem;
+  color: #1071c1;
 }
 
-@media (orientation: landscape) and (max-height: 390px) {
-    #content .table{ width: 90%; }
-    .table #for-o img{ width: 50px; height: 50px;}
+#graphic-display{
+  height: 40%;
+  background: #1071c1;
+  color: white;
+}
+
+#graphic-container{
+  padding: 8px;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(56px, 1fr)) ;
+  justify-items: center;
+}
+
+#corner #highlight{
+  font-size: 1.75rem;
+}
+
+.forecast span i{
+  display: block;
+  font-size: 1.05em;
+  opacity: 0.8;
+}
+
+.fs-value{
+  font-style: normal;
+  transition: 200ms;
+}
+
+#graphic-container div{
+  /* Declare flex here to avoid writting the class multiple time in the HTML page */
+  width: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding: 0 4px;
+  margin: 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(60.5px);
+  -webkit-backdrop-filter: blur(60.5px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+#graphic-container div#corner{
+  width: 72px;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  gap: 2px;
+}
+
+section#weather-advice{
+  height: 512px;
+  position: relative;
+}
+
+
+#written-display #title,
+#weather-advice #title{
+  font-size: 2.05rem;
+  margin-top: 32px;
+  width: 100%;
+}
+
+#tab-advice{
+  margin: 32px auto;
+  flex-wrap: wrap;
+  max-width: 496px;
+}
+
+#tab-advice .tab-radio{ display: none;}
+
+#tab-advice .tab-label{
+  font-weight: bold;
+  padding: 8px 24px;
+  border-bottom: 4px solid transparent;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+#tab-advice .content-advice{
+  order: 1;
+  width: 100%;
+  display: none;
+  background: #e7f3fd;
+  margin-top: 32px;
+  padding: 32px 16px;
+  text-align: justify;
+  border-bottom: 4px solid #1071c1;
+  line-height: 150%;
+}
+
+#tab-advice .tab-radio:checked+.tab-label{
+  color: #1071c1;
+  border-color: #1071c1;
+}
+
+#tab-advice .tab-radio:checked+.tab-label+.content-advice{
+  display: block;
+}
+
+.content-advice i{
+  font-style: normal;
+  background: #fdd020;
+  padding: 1px 4px;
+}
+
+#w-a-decor{
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media all and (max-width: 704px) {
+  
+  #written-display #title{
+    font-size: 1.75rem;
+  }
+
+  #forecast-display{
+    height: auto;  
+  }
+
+  #w-result-box{
+    grid-template-columns: repeat(auto-fit, minmax(152px, auto)) ;
+  }
+
+  #graphic-container{
+    width: 100%;
+    height: auto;
+    grid-template-columns: repeat(auto-fit, minmax(56px, auto));
+    justify-items: center;
+    justify-content: space-evenly;
+    align-content: end;
+    padding-bottom: 24px;
+    /* background: red; */
+    gap: 16px;
+
+  }
+
+  #graphic-container div{
+    width: 100%;
+    padding: 16px 0;
+    gap: 16px;
+    grid-column: span 1;
+
+  }
+
+  #graphic-container div#corner{
+    grid-column: 1 / -1;
+  }
+
+  section#weather-advice{
+    height: auto;
+  }
+
+  #w-a-decor{
+    position: relative;
+    top: -48px;
+  }
+
+  #w-a-decor img{
+    display: block;
+    margin: auto;
+  }
+}
+
+/* Special style for Ipads */
+@media all and (min-width: 768px) and (min-height: 1024px) {
+  #forecast-display{
+    height: auto;
+  }
+
+  #graphic-display{
+    padding: 1.5em 0;
+  }
 }

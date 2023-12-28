@@ -7,7 +7,7 @@ pagesServingRouter.get('', (req, res) => { res.render('index'); });
 
 pagesServingRouter.get('/forecast(.html)?', (req, res) => { res.render('forecast'); });
 
-pagesServingRouter.get('/location(.html)?', (req, res) => { res.render('location'); });
+pagesServingRouter.get('/university(.html)?', (req, res) => { res.render('university'); });
 
 pagesServingRouter.get('/about(.html)?', (req, res) => { res.render('about'); });
 

@@ -1,68 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {{>link_url}}
+    {{>headUrl}}
+    <link rel="stylesheet" href="/css/iservices.css">
     <link rel="stylesheet" href="/css/forecast.css">
     <script type="text/javascript" src="/js/forecast.js" defer></script>
     <title>Forecast</title>
 </head>
 <body>
-    <div id="global-container">
-     {{>header}}
-     <div id="content">
-        <div id="title">
-            <h3>Enter a (Postal code/City/Country/) of a location in the box bellow to get a full resume of the forecasts.</h3>
-        </div>
-        <div id="search-bar">
-            <form>
-                <input type="text" id="target-location" placeholder="Ex: Boston"><button>Get Weather</button>
-            </form>
-        </div>
-        <div class="table ">
-            <div id="for-o">
-                <p class="result">Time</p>
-                <img class="result" width="24" height="24">
-                <p><span class="result"></span>&nbsp;<sup>o</sup>C</p>
+    {{>header}}
+     
+    <main>
+        {{>disclaimer}}
+        <section class="iservices flex f-column j-c-center a-i-center">
+            <div id="intro">
+                <p id="title" class="bold">The Weather info you need for your day</p>
+                <p id="subtitle">Always be a step ahead before going out, that way there is nothing to stress about</p>
             </div>
-            <h3>Additional info</h3>
-            <div class="first-row">
-                <table>
-                    <tr>
-                         <th title="Feelslike"><i class="fa-solid fa-temperature-low"></i><i class="fa-solid fa-wave-square"></i></th>
-                         <th title="Windspeed"><i class="fa-solid fa-wind"></i></th>
-                         <th title="Visibility"><i class="fa-solid fa-eye"></i></th>             
-                    </tr>
-                    <tr>
-                        <td><span class="result">...</span> degree(s)</td>
-                        <td><span class="result">...</span> (km/h)</td>
-                        <td><span class="result">...</span> m</td>
-                    </tr>
-                </table>
+            <div id="entry">
+                <div id="capture">
+                    <input type="text" name="Location entry" id="location" placeholder="Type a city or a country">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <p id="message-label" class="text-center">There were an error here</p>
             </div>
-            <div class="second-row">
-                <table>
-                    <tr>
-                        <th title="Humidity"><i class="fa-solid fa-rainbow"></i></th>
-                        <th title="Pressure"><i class="fa-solid fa-gauge"></i></th>
-                        <th title="Precipitation"><i class="fa-solid fa-cloud-rain"></i></th>
-                    </tr>
-                    <tr>
-                        <td><span class="result"></span> m</td>
-                        <td><span class="result"></span> m</td>
-                        <td><span class="result"></span> g.m <sup>-3</sup></td>
-                    </tr>
-                </table>
+        </section>
+
+        <section id="forecast-display">
+            <div id="written-display" class="flex f-column a-i-center">
+                <div id="title" class="text-center bold">
+                    Weather Summary
+                </div>
+                <div id="w-result-box">
+                    {{!-- 1 --}}
+                    <div class="w-wrapper">
+                        <div class="w-category" id="wind">
+                            <span>Forecast</span>
+                        </div>
+                        <div class="w-data">
+                            <span class="data-value bold">Sunny</span>
+                        </div>
+                    </div>
+                    {{!-- 2 --}}
+                    <div class="w-wrapper">
+                        <div class="w-category" id="temperature">
+                            <span>Temperature</span>
+                        </div>
+                        <div class="w-data">
+                            <span class="data-value bold">40</span>
+                            <span><sup>o</sup>C</span>
+                        </div>
+                    </div>
+                    {{!-- 3 --}}
+                    <div class="w-wrapper">
+                        <div class="w-category" id="windsp">
+                            <span>Wind speed</span>
+                        </div>
+                        <div class="w-data">
+                            <span class="data-value bold">40</span>
+                            <span>km/h</span>
+                        </div>
+                    </div>
+                    {{!-- 4 --}}
+                    <div class="w-wrapper">
+                        <div class="w-category" id="pressure">
+                            <span>Pressure</span>
+                        </div>
+                        <div class="w-data">
+                            <span class="data-value bold">40</span>
+                            <span>Pa</span>
+                        </div>
+                    </div>
+                    {{!-- 5 --}}
+                    <div class="w-wrapper">
+                        <div class="w-category" id="precipitation">
+                            <span>Precipitacion</span>
+                        </div>
+                        <div class="w-data">
+                            <span class="data-value bold">40</span>
+                            <span>Pe</span>
+                        </div>
+                    </div>
+                    {{!-- 6 --}}
+                    <div class="w-wrapper">
+                        <div class="w-category" id="humidity">
+                            <span>Humidity</span>
+                        </div>
+                        <div class="w-data">
+                            <span class="data-value bold">40</span>
+                            <span>g/m<sup>3</sup></span>
+                        </div>
+                    </div>
+                    {{!-- 7 --}}
+                    <div class="w-wrapper">
+                        <div class="w-category" id="uvindex">
+                            <span>UV index</span>
+                        </div>
+                        <div class="w-data">
+                            <span class="data-value bold">40</span>
+                            <span>mW/m<sup>2</sup></span>
+                        </div>
+                    </div>
+                    {{!-- 8 --}}
+                    <div class="w-wrapper">
+                        <div class="w-category" id="visibility">
+                            <span>Visibility</span>
+                        </div>
+                        <div class="w-data">
+                            <span class="data-value bold">40</span>
+                            <span>km</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p>The forecast at <span id="txt-resume" class="result"></span>. Thanks for consulting us!</p>
-                
-        </div>
-        <div class="server-message hide">
-            <p id="message">The current location is incorrect</p>
-        </div>
-     </div>
-        {{>commentbox}}
-        {{>sidemenu}}
-        {{>footer}}
-    </div>
+            <div id="graphic-display" class="flex j-c-center a-i-center">
+                <div id="graphic-container">
+                    <div class="forecast flex f-column j-c-center a-i-center" id="corner">
+                            <span><img src="/images/cloudy.png" width="64" height="64" alt="forecast Icon"></span>
+                            <span> <i class="fs-value"> Sunny </i></span>
+                            <span id="highlight"><i class="fs-value">18</i> <sup>o</sup>C</span>
+                    </div>
+                    <div class="forecast">
+                            <span><i class="fa-solid fa-wind"></i></span>
+                            <span> <i class="fs-value">34</i> km/h</span>
+                    </div>
+                    <div class="forecast">
+                            <span><i class="fa-solid fa-gauge"></i></span>
+                            <span> <i class="fs-value">34</i> Pa</span>
+                    </div>
+                    <div class="forecast">
+                        <span><i class="fa-solid fa-cloud-sun-rain"></i></span>
+                        <span> <i class="fs-value">18</i> Pe</span>
+                    </div>
+                    <div class="forecast">
+                        <span><i class="fa-solid fa-droplet"></i></span>
+                        <span> <i class="fs-value">18</i> g/m<sup>3</sup></span>
+                    </div>
+                    <div class="forecast">
+                        <span><i class="fa-solid fa-sun"></i></span>
+                        <span><i class="fs-value">18</i> mW<sup>2</sup></span>
+                    </div>
+                    <div class="forecast">
+                        <span><i class="fa-solid fa-eye-slash"></i></span>
+                        <span><i class="fs-value">18</i> km</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="weather-advice">
+            <div id="title" class="text-center bold">
+                    Weather Advise
+            </div>
+            <div id="tab-advice" class="flex j-c-center">
+                <input type="radio" class="tab-radio" name="radio-advice" id="hot-ad" checked>
+                <label for="hot-ad" class="tab-label"><span class="circle orange"> Hot</span></label>
+                <div class="content-advice">
+                    1. Sometimes you can notice that you sweat a lot more than 
+                    usual. This is because of the raise of temperature. Here are 
+                    some measure you can follow to avoid side effect of a hot 
+                    weather. <i>Sometimes you can notice that</i> you sweat a lot more 
+                    than usual. This is because of the raise of temperature. Here 
+                    are some measure you can follow to avoid side effect of a hot 
+                    weather:
+                </div>
+                <input type="radio" class="tab-radio" name="radio-advice" id="cold-ad">
+                <label for="cold-ad" class="tab-label"><span class="circle orange"> Cold</span></label>
+                <div class="content-advice">
+                    2. Sometimes you can notice that you sweat a lot more than 
+                    usual. This is because of the raise of temperature. Here are 
+                    some measure you can follow to avoid side effect of a hot 
+                    weather. Sometimes you can notice that you sweat a lot more 
+                    than usual. This is because of the raise of temperature. Here 
+                    are some measure you can follow to avoid side effect of a hot 
+                    weather:
+
+                    We specially gathered those tip from professional skin care 
+                    specialists
+                </div>
+                <input type="radio" class="tab-radio" name="radio-advice" id="rainy-ad">
+                <label for="rainy-ad" class="tab-label"><span class="circle orange"> Rainy</span></label>
+                <div class="content-advice">
+                    3. Sometimes you can notice that you sweat a lot more than 
+                    usual. This is because of the raise of temperature. Here are 
+                    some measure you can follow to avoid side effect of a hot 
+                    weather. Sometimes you can notice that you sweat a lot more 
+                    than usual. This is because of the raise of temperature. Here 
+                    are some measure you can follow to avoid side effect of a hot 
+                    weather:
+
+                    We specially gathered those tip from professional skin care 
+                    specialists
+                </div>
+                <input type="radio" class="tab-radio" name="radio-advice" id="normal-ad">
+                <label for="normal-ad" class="tab-label"><span class="circle orange"> Normal</span></label>
+                <div class="content-advice">
+                    4. Sometimes you can notice that you sweat a lot more than 
+                    usual. This is because of the raise of temperature. Here are 
+                    some measure you can follow to avoid side effect of a hot 
+                    weather. Sometimes you can notice that you sweat a lot more 
+                    than usual. This is because of the raise of temperature. Here 
+                    are some measure you can follow to avoid side effect of a hot 
+                    weather:
+
+                    We specially gathered those tip from professional skin care 
+                    specialists
+                </div>
+            </div>
+            <div id="w-a-decor">
+                <img src="/icons/icon-cruise.png" alt="Image of boat cruise">
+            </div>
+        </section>
+    </main>
+
+    {{>footer}}
 </body>
 </html>

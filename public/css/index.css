@@ -1,87 +1,268 @@
-div#content{
-    width: 98%;
-    margin: auto;
-    height: calc(100vh * 0.799);
-    padding: 45px 15px 10px 15px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    overflow: hidden;
-    gap: 10px;
+/* Part I  */
+
+section#entrance{
+    position: relative;
+    background: #1071c1;
+    border-bottom-left-radius: 32px;
 }
 
-#content-left-side #content-header{
-    width: 80%;
-    height: 215px;
-    margin: 0px auto 0px auto;
+section#entrance::after{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 96px;
+    background-color:#1071c1;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    border: 1px solid transparent;
+    border-top: 0;
+    bottom: -40px;
+    z-index: -1;
 }
 
-#content-header p{
-    font-size: 20px;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-#site-name{ font-family: snowball; font-size: 1.5em; }
-
-#content-header a{text-decoration: none;}
-
-#content-header a button{
-    width: 180px;
-    height: 45px;
-    display: block;
-    font-size: 24px;;
-    user-select: none;
-    background-color: #fff;
-    color: #4fa9f8;
-    font-weight: bold;
-    text-align: left;
-    padding-left: 10px;
-    cursor: pointer;
-}
-
-div#content-boxes{
-    margin: 35px auto 0 auto;
+#text-content{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 32px;
+    color: whitesmoke;
+    padding: 48px 0;
+    margin-left: 72px;
+    width: 50%;
 }
 
-div#content-boxes .box{
-    width: 210px;
-    height: fit-content;
-    overflow-y: auto;
+#text-content #brand-name{
+    font-size: 2.25rem;
+    font-weight: bold;
+    -webkit-text-stroke: 1.5px whitesmoke;
 }
 
-div#content-boxes .box h3{ border-bottom: 2px solid rgb(134, 134, 77); }
-
-div#content-boxes .box p{
-    padding: 5px;
+#text-content #brand-intro{
     text-align: justify;
-    font-size: 16px;
+    word-wrap: break-word;
+    word-break: keep-all;
 }
 
-
-div#content #content-right-side{
-    display: none;
+#image-content{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 56px 0;
+    margin-right: 72px;
+    /* border: 1px solid red */
 }
 
-div#content #content-right-side img{ width: 150px; height: 150px; user-select: none; }
+#image-content img{
+    display: block;
+    width: 208px;
+    height: 208px;
+}
 
-@media (min-width: 1025px){
-    div#content #content-right-side{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        width: 100%;   
+#top-services{
+    /* height: 40px; */
+    user-select: none;
+}
+
+#top-services span.t-s{
+    display: inline-block;
+    height: 100%;
+    width: auto;
+    background: whitesmoke; 
+    cursor: pointer;  
+}
+
+#top-services span.t-s a{
+    padding: 0.75em .70em;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    color: #1071c1;
+    text-align: center;
+    height: 100%;
+    transition: all 500ms;
+}
+
+#top-services span.t-s a:hover{
+    background: #1071c1;
+    color: whitesmoke;
+}
+
+#top-services span#mid{
+    font-size: 0.95rem;
+    margin: 0 0.80em;
+}
+
+/* Part II  */
+
+section#offers,
+section#providers{
+    height: auto;
+    padding: 72px;
+}
+
+#offers .title{
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-align: right;
+}
+
+#offers #offers-box,
+#providers #providers-box{
+    margin-top: 56px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 80px;
+}
+
+#offers-box .offer .offer-t,
+#providers-box .provider .provider-t{
+    display: block;
+    font-size: 1.15rem;
+    text-align: right;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color:#1071c1
+}
+
+#offers-box .offer .offer-d{
+    display: block;
+    text-align: justify;
+    border-left: 2px solid #1071c1;
+    border-right: 2px solid #1071c1;
+    border-top: 2px solid #E7F3FD;
+    border-bottom: 2px solid #E7F3FD;
+    border-radius: 24px;
+    padding: 24px 16px;
+}
+
+#offers .title,
+#offers-box .offer .offer-t{
+    position: relative;
+    right: 16px;
+}
+
+/* Part III */
+
+section#partners{
+    height: 200px;
+    background: #E7F3FD;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#logo-partners img{
+   display: inline-block;
+   width: 72px;
+   height: 72px;
+   margin: 0 16px;
+   user-select: none;
+}
+
+#intro-partners #highlight{
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+
+/* Part IV */
+
+#providers .title{
+    font-weight: 800;
+    text-align: center;
+}
+
+#providers .title span{
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: -webkit-linear-gradient(#c09900, #fdd020);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#providers-box .provider a[title="WeatherStack"]{
+    text-align: left;
+}
+
+#providers-box .provider .provider-d{
+    display: block;
+    text-align: justify;
+}
+
+/* Mobile Responsive section */
+@media all and (max-width: 896px) {
+    
+    section#entrance{
+        border-radius: 0;
     }
 
+    section#entrance::after{
+        content: none;
+    }
+
+    #text-content{
+        padding: 56px 0;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #image-content{
+        display: none;
+    }
+
+    #offers .title{
+        text-align: center;
+        right: 0;
+    }
+    
+    section#offers,
+    section#providers{
+        padding: 72px 8px;
+    }
+
+    #offers #offers-box,
+    #providers #providers-box{
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    #offers-box .offer .offer-t,
+    #providers-box .provider .provider-t{
+        text-align: center !important;
+        right: 0;
+        margin-bottom: 8px;
+    }
+
+    #offers-box .offer .offer-d,
+    #providers-box .provider .provider-d{
+        display: block;
+        width: 100%;
+    }
+
+    #providers-box .provider .provider-d{
+        padding: 0 8px;
+    }
+
+    #intro-partners{
+        text-align: center;
+        padding: 0 4px;
+    }
+
+    #logo-partners img{
+        width: 56px;
+        height: 56px;
+     }
+
 }
 
-@media (max-width: 1024px) {
-    div#content{ padding: 0; width:100% !important; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center;}
-    #content-header{ height: fit-content !important;}
-    #content-boxes{ display: none !important;}
-    div#content #content-right-side img{ width: 54px; height: 54px;}
+@media all and (max-width: 432px) {
+    #text-content #brand-name{
+        font-size: 2rem;
+    }
+
+    #top-services{
+        margin: auto;
+    }
 }

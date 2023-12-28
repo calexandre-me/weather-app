@@ -1,19 +1,29 @@
-<div class="open-mobile-bars">
-  <button id="open-menu"><i class="fa-solid fa-bars"></i></button>
-  <span>Charles Weather App</span>
-</div>
-<div id="header">
-  <div class="close-mobile-bars">
-    <button id="close-menu"><i class="fa-solid fa-times"></i></button>
+<header class="flex j-row-sb">
+  <div id="logo-box">
+    <img src='/images/logo.png'/>
   </div>
-  <nav> 
-    <ul>
-      <li id="logo-wp"><a href="/"><img src='/images/bot.png'/></a></li>
-      <li><a href="/forecast.html"><i class="fa-solid fa-cloud"></i><br>Forecast</a></li>
-      <li><a href="/location.html"><i class="fa-solid fa-location-dot"></i><br>Location</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/help.html">Help</a></li>
-      <li><a href="/login.html"><i class="fa-solid fa-user"></i></a></li>
-    </ul>  
-  </nav>
-</div>
+  {{!--  --}}
+  <input type="checkbox" name="Mobile_bar" id="mobile-bar" class="d-hidden">
+  <label id="label-menu" for="mobile-bar" class="d-hidden"></label>
+  {{!--  --}}
+  
+  <div id="links-box" class="flex j-c-center a-i-center">
+    <span><a href="/">Home</a></span>
+    <span id="services">
+      <a id="tag">Services</a>
+      <div id="sub-links">
+        <a href="/forecast">Forecast</a>
+        <a href="/university">University</a>
+      </div>
+    </span>
+    <span><a href="/about">About</a></span>
+    <span id="subscribe">
+      <img src="/icons/isubscribe.png" width="40" height="40" alt="Subscribe Icon"/>
+      <div id="subscribe-box" class="i-subscribe">
+        <input type="email" autocomplete="off" name="email" placeholder="Email here" id="user-mail">
+        <button onclick="alert(window.innerWidth)" type="submit" class="bold">SUBSCRIBE</button>
+      </div>
+    </span>
+
+  </div>
+</header>

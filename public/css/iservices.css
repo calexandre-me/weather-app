@@ -1,0 +1,128 @@
+/* Disclaimer design */
+#disclaimer{
+  height: 96px;
+  gap: 16px;
+  padding: 0 72px;
+  /* background: #E7F3FD; */
+  /* box-shadow: 2px 2px 2px #E7F3FD, -2px -2px 2px #E7F3FD; */
+  border: 1px solid #E7F3FD;
+  font-size: 0.95rem;
+  margin: 8px 0;
+  border-radius: 8px;
+}
+
+#disclaimer img{
+  display: block;
+  width: 56px;
+  height: 56px;
+}
+
+#disclaimer p{
+  line-height: 150%;
+}
+
+section.iservices{
+  position: relative;
+  height: 456px;
+  gap: 48px;
+  color: whitesmoke;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+section.iservices::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(208, 86%, 11%, 0.37);
+  z-index: 1;
+}
+
+section.iservices #intro,
+section.iservices #entry
+{
+  position: relative;
+  z-index: 2;
+}
+
+section.iservices #intro p{
+ padding: 0 16px;
+}
+
+section.iservices #intro p#title{
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+section.iservices #intro p#subtitle{
+  font-size: 1.05rem;
+}
+
+#entry #capture input,
+#entry #capture button{
+  height: 48px;
+  padding: 0 0.75rem;
+}
+
+#entry #capture input{ 
+  width: 250px;
+  border-radius: 16px 0 0 16px;
+  letter-spacing: 1.05px;
+  cursor: text;
+}
+
+#entry #capture input::placeholder{
+  font-style: italic;
+}
+
+#entry #capture button{ 
+  position: relative;
+  left: -10px;
+  top: 3px;
+  font-size: 1.25rem;
+  border-radius: 8px 16px 16px 0;
+  background: #fdd020;
+}
+
+#entry #message-label{
+  text-align: center;
+  margin-top: 8px;
+  padding: 2px 4px;
+  color: rgb(249, 194, 194);
+}
+
+@media all and (max-width: 704px) {
+  #disclaimer{
+    height: auto;
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  #disclaimer p{
+    text-align: justify;
+  }
+
+  section.iservices #intro p#title{
+    font-size: 1.75rem;
+  }
+
+  #entry #capture input::placeholder{
+    text-align: center;
+  }
+
+  #entry #capture input,
+  #entry #capture button{ 
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  #entry #capture button{ 
+    display: block;
+    margin: 8px auto;
+    left: 0;
+    top: 0;
+  }
+}

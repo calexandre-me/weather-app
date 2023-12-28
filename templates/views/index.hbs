@@ -1,47 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {{>link_url}}
+  {{>headUrl}}
   <link rel="stylesheet" href="/css/index.css">
-  <title>Weather App - Home</title>
+  <title>GPS - Home</title>
 </head>
 <body>
-  <div id="global-container">
     {{>header}}
-    {{!-- Main-content of the page --}}
-    <div id="content">
-      <div id="content-left-side">
-       
-       <div id="content-header">
-          <p>WELCOME !!! to <span id="site-name">WEATHER APP</span>.</p>
-          <p> The app provides reliable information about the weather for a determinated location. Additionally, we offer a geolocation service. And IT'S FREE!!!</p>
-          <a href="/forecast"><button>See Forecast</button></a>
-       </div>
-       <div id="content-boxes">
-        <div class="box" id="box1">
-          <h3>S1 - Weather</h2>
-          <p>We use an end point API to get you the most update information about the weather in a specific area. <a href="https://weatherstack.com/" title="Redirect to Weather API">Read about the API</a></p>
+    
+    <main>
+      <section id="entrance">
+        <div id="text-content">
+          <p id="brand-name">Global Place Summary</p>
+          <p id="brand-intro">
+            Climate is the long-term weather pattern in a region, 
+            typically averaged over 30 years. More rigorously, it is 
+            the mean and variability of meteorological variables 
+            over a time spanning from months to millions of 
+            years.:
+          </p>
+          <div id="top-services">
+            <span class="t-s">
+              <a href="#">Forecast</a>
+            </span>
+            <span id="mid">or</span>
+            <span class="t-s">
+              <a href="#">University</a>
+            </span>
+          </div>
         </div>
-        <div class="box" id="box2">
-          <h3>S2 - Geolocation</h2>
-          <p>We use an API to determine the location based on coordinates. You can also get the coordinate for a location. <a href="https://geoapify.com/">Link API</a></p>
+        <div id="image-content">
+          <img src="/images/index-main.png" width="208" height="208" alt="Image highlight">
         </div>
-       </div>
-      </div>
-      <div id="content-right-side">
-        <img src="/images/sun.png" width="120" height="120" alt="Image of a sunny weather"/>
-        <img src="/images/cloudy.png" width="120" height="120" alt="Image of a cloudy weather"/>
-        <img src="/images/windy.png" width="120" height="120" alt="Image of a windy weather"/>
-        <img src="/images/rain.png" width="120" height="120" alt="Image of a rainy weather"/>
-        <img src="/images/snow.png" width="120" height="120" alt="Image of a snow weather"/>
-        <img src="/images/tornado.png" width="120" height="120" alt="Image of a tornado"/>
-      </div>
-     </div>
-{{!-- Main-content of the page --}}
-    {{>commentbox}}
-    {{>sidemenu}}
-    {{!-- {{>notices}} --}}
+      </section>
+      {{!--  --}}
+      <section id="offers">
+        <div class="title">
+          Our services
+        </div>
+        <div id="offers-box">
+          <div class="offer">
+            <span class="offer-t">Forecast</span>
+            <span class="offer-d">
+                Climate is the long-term weather 
+              pattern in a region, typically averaged 
+              over 30 years. More rigorously, it is 
+              the mean and variability of 
+              meteorological variables over a time 
+              spanning from months to millions of 
+              years.
+            </span>
+          </div>
+          <div class="offer">
+            <span class="offer-t">Forecast</span>
+            <span class="offer-d">
+                  Climate is the long-term weather 
+                pattern in a region, typically averaged 
+                over 30 years. More rigorously, it is 
+                the mean and variability of 
+                meteorological variables over a time 
+                spanning from months to millions of 
+                years.
+            </span>
+          </div>
+          <div class="offer">
+            <span class="offer-t">Forecast</span>
+            <span class="offer-d">
+              Climate is the long-term weather 
+              pattern in a region, typically averaged 
+              over 30 years. More rigorously, it is 
+              the mean and variability of meteorological variables over a time 
+              spanning from months to millions of 
+              years.
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section id="partners">
+        <div id="logo-partners">
+          <img src="/images/partner-1.png" alt="Partner 1 - Google">
+          <img src="/images/partner-2.png" alt="Partner 2 - Udemy">
+          <img src="/images/partner-3.png" alt="Partner 3 - Facebooks">
+        </div>
+        <div id="intro-partners">
+          We work with the companies above. As <span id="highlight">Partners</span>,
+          they highly appreciated the good services we provide.
+        </div>
+      </section>
+
+      <section id="providers">
+        {{!-- Has same style as services section --}}
+        <div class="title">
+          We are <span>Powered by</span>:
+        </div>
+        <div id="providers-box">
+          <div class="provider">
+            <a href="https://www.weatherstack.com" title="WeatherStack" class="provider-t">WEATHERStack</a>
+            <span class="provider-d">
+                Climate is the long-term weather 
+              pattern in a region, typically averaged 
+              over 30 years. More rigorously, it is 
+              the mean and variability of 
+              meteorological variables over a time 
+              spanning from months to millions of 
+              years.
+            </span>
+          </div>
+          <div class="provider">
+            <a href="#" title="HipoLabs" class="provider-t">HipoLabs</a>
+            <span class="provider-d">
+                  Climate is the long-term weather 
+                pattern in a region, typically averaged 
+                over 30 years. More rigorously, it is 
+                the mean and variability of 
+                meteorological variables over a time 
+                spanning from months to millions of 
+                years.
+            </span>
+          </div>
+        </div>
+      </section>
+    </main>
+
     {{>footer}}
-  </div>
+
+    {{>cookies}}
 </body>
 </html>

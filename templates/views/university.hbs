@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>headUrl}}
+    <link rel="stylesheet" href="/css/iservices.css">
+    <link rel="stylesheet" href="/css/university.css">
+    <script type="text/javascript" src="/js/university.js" defer></script>
+    <title>University-L</title>
+</head>
+<body>
+    {{>header}}
+     
+    <main>
+        {{>disclaimer}}
+        <section class="iservices flex f-column j-c-center a-i-center">
+            <div id="intro">
+                <p id="title" class="bold">Get to know universities aboard in one click</p>
+                <p id="subtitle">Thinking about studing online, you can see all universities in your targeting country</p>
+            </div>
+            <div id="entry">
+                <div id="capture">
+                    <input type="text" name="Location entry" id="location" placeholder="Type a city or a country">
+                    <button class="bold"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <p id="message-label" class="text-center">There were an error here</p>
+            </div>
+        </section>
+    </main>
+
+    {{>footer}}
+</body>
+</html>

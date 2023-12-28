@@ -17,7 +17,6 @@ app.set('view engine', 'hbs');
 
 hbs.registerPartials(pathToPartials);
 
-
 app.use(express.static(publicRessourcesPath));
 app.use(express.urlencoded( {extended: true }))
 app.use(express.json())
